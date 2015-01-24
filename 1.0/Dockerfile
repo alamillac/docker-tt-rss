@@ -1,6 +1,6 @@
 # tt-rss
 #
-# VERSION               0.0.1
+# VERSION               1.0
 
 FROM     ubuntu:14.04
 MAINTAINER Andres F. Lamilla, "alamilla@gmail.com"
