@@ -1,0 +1,8 @@
+#!/bin/bash
+
+DOMINIO=localhost
+MYSQLPASS="some pass"
+MYSQLUSERPASS="some pass"
+
+docker run -d -p 3306:3306 --name mysql-rtts -e MYSQL_ROOT_PASSWORD=$MYSQLPASS -e MYSQL_DATABASE=rtts -e MYSQL_USER=rtts -e MYSQL_PASSWORD=$MYSQLUSERPASS orchardup/mysql
+docker run -d -p 80 --link mysql-rtts:db --name webapp -e DOMAIN=$DOMINIO alamilla/tt-rss
